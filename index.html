@@ -12,28 +12,26 @@
 		<script>
 			
 			var xmlhttp = new XMLHttpRequest();
-			var url = "https://100025152.collect.igodigital.com/c2/100025152/update_item_secure.json";
-
+			var newItemUrl = "https://100025152.collect.igodigital.com/c2/100025152/update_item_secure.json";
+			var url = window.location.href;
 			xmlhttp.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
 					var myArr = JSON.parse(this.responseText);
 					myFunction(myArr);
 				}
 			};
-			xmlhttp.open("POST", url, true);
+			xmlhttp.open("POST", newItemUrl, true);
 			xmlhttp.send(JSON.stringify(
 				{
 				  "api_key": "597bf1d0-4bdc-11e9-962a-0a6207dffc1a",
 				  "payload": {
-					"item": "INSERT_ITEM",
-					"unique_id": "INSERT_UNIQUE_ITEM_ID",
-					"item_type": "INSERT_ITEM_TYPE",
-					"name": "INSERT_ITEM_NAME_OR_TITLE",
-					"url" : "INSERT_ITEM_URL",
-					"INSERT_ATTRIBUTE_NAME": "INSERT_ATTRIBUTE_VALUE"
+					"item": url,
+					"unique_id": url,
+					"name": url,
+					"url" : url
 				  }
 				}
-			);
+			));
 
 			var _etmc = [];
 			_etmc.push(["setOrgId", "100025152"]);
