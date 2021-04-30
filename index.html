@@ -7,7 +7,10 @@
 	  var _etmc = [];
 	  _etmc.push(["setOrgId", "100025152"]);
   	  _etmc.push(["setUserInfo", {"email": "candice.mackay@pwc.com"}]);
-	  _etmc.push(["trackPageView"]);
+		
+	  var thisURL = window.location.origin + window.location.pathname;
+	  _etmc.push(["trackPageView", {"item" : thisURL}]);
+	  //_etmc.push(["trackPageView"]);
 	</script>
 
 	<body>
@@ -15,7 +18,7 @@
 		<p>hello world. I'm tracking you.</p>
 		<p>hello world. I'm tracking you.</p>
 		<p>hello world. I'm tracking you.</p>
-		<p>hello world. I'm tracking you.7</p>
+		<p>hello world. I'm tracking you.8</p>
 	
 	</body>
 
